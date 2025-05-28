@@ -11,6 +11,9 @@
 
 <div class="hero">
 	<h1>Welcome to AgentSalad</h1>
+	<div class="hero-logo">
+		<img src="/logo.png" alt="AgentSalad Logo" class="hero-logo-image" />
+	</div>
 	<p class="hero-subtitle">Crunchy insights into the agentic web</p>
 	<a href="/blog" class="cta-button">Explore Blog Posts</a>
 </div>
@@ -54,6 +57,24 @@
 		color: #2d5016;
 		letter-spacing: -1px;
 		line-height: 1.1;
+	}
+
+	.hero-logo {
+		display: flex;
+		justify-content: center;
+		margin: 0 0 2rem;
+	}
+
+	.hero-logo-image {
+		width: 8rem;
+		height: 8rem;
+		object-fit: contain;
+		filter: drop-shadow(0 4px 12px rgba(45, 80, 22, 0.3));
+		transition: transform 0.3s ease;
+	}
+
+	.hero-logo-image:hover {
+		transform: scale(1.1);
 	}
 
 	.hero-subtitle {
@@ -160,6 +181,11 @@
 
 		.hero h1 {
 			font-size: 2.5rem;
+		}
+
+		.hero-logo-image {
+			width: 6rem;
+			height: 6rem;
 		}
 
 		.hero-subtitle {
