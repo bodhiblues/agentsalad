@@ -253,6 +253,8 @@ Each page includes comprehensive meta tags for optimal SEO and social sharing. T
 - **Twitter Cards**: Optimized Twitter sharing with custom card types
 - **Article metadata**: Structured data including publication dates and tags
 - **Canonical URLs**: Support for custom canonical URLs when needed
+- **XML Sitemap**: Automatically generated at `/sitemap.xml` with all pages and posts
+- **Robots.txt**: Automatically generated at `/robots.txt` with sitemap reference
 
 #### SEO Features
 
@@ -262,6 +264,36 @@ Each page includes comprehensive meta tags for optimal SEO and social sharing. T
 - **Article-specific metadata** (publication date, tags)
 - **Canonical URL support** for SEO best practices
 - **Automatic fallbacks** to ensure all posts have proper meta tags
+- **Dynamic XML sitemap** that updates when new posts are added
+- **Search engine friendly** robots.txt file
+
+#### XML Sitemap
+
+The blog automatically generates an XML sitemap at `/sitemap.xml` that includes:
+
+- **Homepage** with weekly update frequency and priority 1.0
+- **Blog listing page** with weekly update frequency and priority 0.8
+- **All published blog posts** with monthly update frequency and priority 0.7
+- **Automatic updates** when new posts are added or existing posts are modified
+- **Proper lastmod dates** based on post publication dates
+
+To customize sitemap settings, edit `src/lib/config.ts`:
+
+```typescript
+export const siteConfig = {
+  url: 'https://yourdomain.com', // Update to your domain
+  sitemapChangeFreq: {
+    homepage: 'weekly',
+    blog: 'weekly', 
+    posts: 'monthly'
+  },
+  sitemapPriority: {
+    homepage: '1.0',
+    blog: '0.8',
+    posts: '0.7'
+  }
+};
+```
 
 ## Technologies Used
 
