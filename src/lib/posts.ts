@@ -1,4 +1,5 @@
 import { dev } from '$app/environment';
+import type { ComponentType } from 'svelte';
 
 // Types for our posts
 export interface Post {
@@ -9,7 +10,7 @@ export interface Post {
 	readTime: string;
 	tags: string[];
 	published: boolean;
-	content?: string;
+	content?: ComponentType;
 }
 
 // Import all markdown files from the posts directory
@@ -27,7 +28,7 @@ export const posts: Post[] = Object.entries(modules)
 			readTime: module.metadata.readTime,
 			tags: module.metadata.tags,
 			published: module.metadata.published,
-			content: module.default
+			content: module.default as ComponentType
 		};
 	})
 	.filter(post => dev || post.published)

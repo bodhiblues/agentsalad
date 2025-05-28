@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import { error } from '@sveltejs/kit';
 	import { getPost } from '$lib/posts';
+	import PostLayout from '$lib/components/PostLayout.svelte';
 
 	$: slug = $page.params.slug;
 	$: post = getPost(slug);
@@ -17,7 +18,15 @@
 </svelte:head>
 
 {#if post}
-	<svelte:component this={post.content} />
+	<PostLayout 
+		title={post.title}
+		date={post.date}
+		excerpt={post.excerpt}
+		tags={post.tags}
+		readTime={post.readTime}
+	>
+		<svelte:component this={post.content} />
+	</PostLayout>
 {/if}
 
 <style>
