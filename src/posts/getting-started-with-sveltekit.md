@@ -5,6 +5,12 @@ excerpt: 'Learn how to build modern web applications with SvelteKit, the full-st
 tags: ['SvelteKit', 'Tutorial', 'Web Development']
 readTime: '5 min read'
 published: true
+seo:
+  title: 'Complete SvelteKit Tutorial: Build Modern Web Apps Fast'
+  description: 'Master SvelteKit with this comprehensive tutorial. Learn file-based routing, SSR, SSG, and deployment. Perfect for developers starting with SvelteKit.'
+  ogImage: '/images/sveltekit-tutorial-og.jpg'
+  ogType: 'article'
+  twitterCard: 'summary_large_image'
 ---
 
 SvelteKit is a powerful framework for building web applications with Svelte. It provides everything you need to build a modern web app, including routing, server-side rendering, and more.

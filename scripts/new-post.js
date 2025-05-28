@@ -26,44 +26,28 @@ const slug = postTitle
 const date = new Date().toISOString().split('T')[0];
 
 // Create post template
-const template = `---
+const frontmatter = `---
 title: '${postTitle}'
 date: '${date}'
-excerpt: 'Add a brief description of your post here...'
+excerpt: 'A brief description of your post that will appear in the blog listing and search results.'
 tags: ['Tag1', 'Tag2']
 readTime: '5 min read'
-published: true
+published: false
+seo:
+  title: 'Custom SEO title (optional - defaults to post title + site name)'
+  description: 'Custom meta description for search engines (optional - defaults to excerpt)'
+  ogImage: '/images/your-post-og-image.jpg'
+  ogType: 'article'
+  twitterCard: 'summary_large_image'
 ---
 
 # ${postTitle}
 
-Write your blog post content here using Markdown.
+Your post content goes here...
 
 ## Section Heading
 
-You can use all standard Markdown features:
-
-- Lists
-- **Bold text**
-- *Italic text*
-- \`inline code\`
-- Links: [SvelteKit](https://kit.svelte.dev)
-
-### Code Blocks
-
-\`\`\`javascript
-function example() {
-  console.log('Hello, world!');
-}
-\`\`\`
-
-### Blockquotes
-
-> This is a blockquote. You can use it for important notes or quotes.
-
-## Conclusion
-
-Wrap up your post with a conclusion.
+Write your amazing content!
 `;
 
 // Write the file
@@ -82,7 +66,7 @@ if (!fs.existsSync(postsDir)) {
 }
 
 // Write the file
-fs.writeFileSync(filePath, template);
+fs.writeFileSync(filePath, frontmatter);
 
 console.log(`✅ Created new post: ${filePath}`);
 console.log(`📝 Edit the file to add your content`);

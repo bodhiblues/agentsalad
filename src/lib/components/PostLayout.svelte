@@ -1,14 +1,49 @@
 <script lang="ts">
+	import type { SEOData } from '$lib/posts';
+	
 	export let title: string;
 	export let date: string;
 	export let excerpt: string;
 	export let tags: string[];
 	export let readTime: string;
+	export let seo: SEOData | undefined = undefined;
+
+	// SEO values with fallbacks
+	$: seoTitle = seo?.title || `${title} - AgentSalad`;
+	$: seoDescription = seo?.description || excerpt;
+	$: ogImage = seo?.ogImage || '/favicon.png';
+	$: ogType = seo?.ogType || 'article';
+	$: twitterCard = seo?.twitterCard || 'summary';
+	$: canonical = seo?.canonical;
 </script>
 
 <svelte:head>
-	<title>{title} - AgentSalad</title>
-	<meta name="description" content={excerpt} />
+	<title>{seoTitle}</title>
+	<meta name="description" content={seoDescription} />
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content={ogType} />
+	<meta property="og:title" content={seoTitle} />
+	<meta property="og:description" content={seoDescription} />
+	<meta property="og:image" content={ogImage} />
+	<meta property="og:site_name" content="AgentSalad" />
+	
+	<!-- Twitter -->
+	<meta name="twitter:card" content={twitterCard} />
+	<meta name="twitter:title" content={seoTitle} />
+	<meta name="twitter:description" content={seoDescription} />
+	<meta name="twitter:image" content={ogImage} />
+	
+	<!-- Article specific -->
+	<meta property="article:published_time" content={date} />
+	{#each tags as tag}
+		<meta property="article:tag" content={tag} />
+	{/each}
+	
+	<!-- Canonical URL -->
+	{#if canonical}
+		<link rel="canonical" href={canonical} />
+	{/if}
 </svelte:head>
 
 <article class="post">

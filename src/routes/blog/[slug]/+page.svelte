@@ -24,6 +24,7 @@
 		excerpt={post.excerpt}
 		tags={post.tags}
 		readTime={post.readTime}
+		seo={post.seo}
 	>
 		<svelte:component this={post.content} />
 	</PostLayout>

@@ -1,6 +1,16 @@
 import { dev } from '$app/environment';
 import type { ComponentType } from 'svelte';
 
+// Enhanced SEO metadata interface
+export interface SEOData {
+	title?: string;
+	description?: string;
+	ogImage?: string;
+	ogType?: string;
+	twitterCard?: string;
+	canonical?: string;
+}
+
 // Types for our posts
 export interface Post {
 	slug: string;
@@ -11,6 +21,7 @@ export interface Post {
 	tags: string[];
 	published: boolean;
 	content?: ComponentType;
+	seo?: SEOData;
 }
 
 // Import all markdown files from the posts directory
@@ -28,7 +39,8 @@ export const posts: Post[] = Object.entries(modules)
 			readTime: module.metadata.readTime,
 			tags: module.metadata.tags,
 			published: module.metadata.published,
-			content: module.default as ComponentType
+			content: module.default as ComponentType,
+			seo: module.metadata.seo
 		};
 	})
 	.filter(post => dev || post.published)

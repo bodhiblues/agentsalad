@@ -107,6 +107,32 @@ function example() {
 - `tags`: Array of tags for categorization (required)
 - `readTime`: Estimated reading time (required)
 - `published`: Boolean to control visibility (required)
+- `seo`: Enhanced SEO metadata (optional)
+  - `title`: Custom SEO title (defaults to post title + site name)
+  - `description`: Custom meta description (defaults to excerpt)
+  - `ogImage`: Open Graph image URL for social sharing
+  - `ogType`: Open Graph type (defaults to 'article')
+  - `twitterCard`: Twitter card type (defaults to 'summary')
+  - `canonical`: Canonical URL if different from current URL
+
+#### Enhanced SEO Example
+
+```yaml
+---
+title: 'Getting Started with SvelteKit'
+date: '2024-01-15'
+excerpt: 'Learn how to build modern web applications with SvelteKit...'
+tags: ['SvelteKit', 'Tutorial']
+readTime: '5 min read'
+published: true
+seo:
+  title: 'Complete SvelteKit Tutorial: Build Modern Web Apps Fast'
+  description: 'Master SvelteKit with this comprehensive tutorial. Learn file-based routing, SSR, SSG, and deployment.'
+  ogImage: '/images/sveltekit-tutorial-og.jpg'
+  ogType: 'article'
+  twitterCard: 'summary_large_image'
+---
+```
 
 #### Draft Posts
 
@@ -219,11 +245,23 @@ The blog uses custom CSS with modern features like CSS Grid and Flexbox. You can
 
 ### SEO
 
-Each page includes proper meta tags for SEO. The system automatically:
-- Generates page titles from post titles
-- Uses post excerpts for meta descriptions
-- Creates proper Open Graph tags
-- Provides structured data for search engines
+Each page includes comprehensive meta tags for optimal SEO and social sharing. The system automatically:
+
+- **Page titles**: Uses custom SEO titles or falls back to post title + site name
+- **Meta descriptions**: Uses custom SEO descriptions or post excerpts
+- **Open Graph tags**: Complete Facebook/social media sharing optimization
+- **Twitter Cards**: Optimized Twitter sharing with custom card types
+- **Article metadata**: Structured data including publication dates and tags
+- **Canonical URLs**: Support for custom canonical URLs when needed
+
+#### SEO Features
+
+- **Custom titles and descriptions** for each post
+- **Open Graph images** for rich social media previews
+- **Twitter Card optimization** with multiple card types
+- **Article-specific metadata** (publication date, tags)
+- **Canonical URL support** for SEO best practices
+- **Automatic fallbacks** to ensure all posts have proper meta tags
 
 ## Technologies Used
 
