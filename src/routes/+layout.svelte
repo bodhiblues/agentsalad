@@ -11,11 +11,13 @@
 	<header>
 		<nav>
 			<div class="nav-container">
-				<a href="/" class="logo">AgentSalad</a>
+				<a href="/" class="logo">
+					<span class="logo-icon">🥗</span>
+					<span class="logo-text">AGENTSALAD</span>
+				</a>
 				<ul class="nav-links">
 					<li><a href="/" class:active={$page.url.pathname === '/'}>Home</a></li>
 					<li><a href="/blog" class:active={$page.url.pathname.startsWith('/blog')}>Blog</a></li>
-					<li><a href="/about" class:active={$page.url.pathname === '/about'}>About</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -36,10 +38,11 @@
 	:global(body) {
 		margin: 0;
 		padding: 0;
-		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 		line-height: 1.6;
-		color: #333;
-		background-color: #fafafa;
+		color: #2d5016;
+		background: linear-gradient(135deg, #f0f8e8 0%, #e8f5d8 50%, #f0f8e8 100%);
+		min-height: 100vh;
 	}
 
 	:global(*) {
@@ -53,11 +56,13 @@
 	}
 
 	header {
-		background: white;
-		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		background: rgba(255, 255, 255, 0.95);
+		backdrop-filter: blur(10px);
+		box-shadow: 0 2px 20px rgba(45, 80, 22, 0.1);
 		position: sticky;
 		top: 0;
 		z-index: 100;
+		border-bottom: 1px solid rgba(45, 80, 22, 0.1);
 	}
 
 	.nav-container {
@@ -67,14 +72,31 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		height: 4rem;
+		height: 4.5rem;
 	}
 
 	.logo {
-		font-size: 1.5rem;
-		font-weight: bold;
-		color: #2563eb;
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
 		text-decoration: none;
+		transition: transform 0.2s ease;
+	}
+
+	.logo:hover {
+		transform: scale(1.05);
+	}
+
+	.logo-icon {
+		font-size: 2rem;
+		filter: drop-shadow(0 2px 4px rgba(45, 80, 22, 0.2));
+	}
+
+	.logo-text {
+		font-size: 1.5rem;
+		font-weight: 800;
+		color: #2d5016;
+		letter-spacing: -0.5px;
 	}
 
 	.nav-links {
@@ -82,19 +104,37 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		gap: 2rem;
+		gap: 2.5rem;
 	}
 
 	.nav-links a {
 		text-decoration: none;
-		color: #666;
-		font-weight: 500;
-		transition: color 0.2s;
+		color: #2d5016;
+		font-weight: 600;
+		font-size: 1.1rem;
+		transition: all 0.2s ease;
+		position: relative;
 	}
 
 	.nav-links a:hover,
 	.nav-links a.active {
-		color: #2563eb;
+		color: #4a7c59;
+	}
+
+	.nav-links a::after {
+		content: '';
+		position: absolute;
+		bottom: -8px;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: #4a7c59;
+		transition: width 0.3s ease;
+	}
+
+	.nav-links a:hover::after,
+	.nav-links a.active::after {
+		width: 100%;
 	}
 
 	main {
@@ -106,8 +146,9 @@
 	}
 
 	footer {
-		background: #f8f9fa;
-		border-top: 1px solid #e9ecef;
+		background: rgba(255, 255, 255, 0.8);
+		backdrop-filter: blur(10px);
+		border-top: 1px solid rgba(45, 80, 22, 0.1);
 		margin-top: 4rem;
 	}
 
@@ -116,7 +157,8 @@
 		margin: 0 auto;
 		padding: 2rem;
 		text-align: center;
-		color: #666;
+		color: #2d5016;
+		opacity: 0.7;
 	}
 
 	@media (max-width: 768px) {
@@ -125,7 +167,11 @@
 		}
 
 		.nav-links {
-			gap: 1rem;
+			gap: 1.5rem;
+		}
+
+		.logo-text {
+			font-size: 1.25rem;
 		}
 
 		main {

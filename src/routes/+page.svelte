@@ -11,17 +11,16 @@
 
 <div class="hero">
 	<h1>Welcome to AgentSalad</h1>
-	<p class="hero-subtitle">Crunchy Insights into the Agentic Web</p>
+	<p class="hero-subtitle">Crunchy insights into the agentic web</p>
 	<a href="/blog" class="cta-button">Explore Blog Posts</a>
 </div>
 
 <section class="recent-posts">
-	<h2>Recent Posts</h2>
-	<div class="posts-grid">
+	{#if recentPosts.length > 0}
 		{#each recentPosts as post}
 			<article class="post-card">
 				<div class="post-content">
-					<h3><a href="/blog/{post.slug}">{post.title}</a></h3>
+					<h2><a href="/blog/{post.slug}">{post.title}</a></h2>
 					<p class="post-excerpt">{post.excerpt}</p>
 					<div class="post-meta">
 						<span class="post-date">{new Date(post.date).toLocaleDateString('en-US', { 
@@ -34,133 +33,129 @@
 				</div>
 			</article>
 		{/each}
-	</div>
-	<div class="view-all">
-		<a href="/blog" class="view-all-link">View All Posts →</a>
-	</div>
+	{:else}
+		<div class="no-posts">
+			<p>No blog posts yet. Check back soon!</p>
+		</div>
+	{/if}
 </section>
 
 <style>
 	.hero {
 		text-align: center;
-		padding: 4rem 0 6rem;
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-		color: white;
+		padding: 6rem 2rem 8rem;
 		margin: -2rem -2rem 4rem;
-		border-radius: 0 0 2rem 2rem;
 	}
 
 	.hero h1 {
-		font-size: 3.5rem;
-		font-weight: 700;
-		margin: 0 0 1rem;
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		font-size: 4rem;
+		font-weight: 800;
+		margin: 0 0 1.5rem;
+		color: #2d5016;
+		letter-spacing: -1px;
+		line-height: 1.1;
 	}
 
 	.hero-subtitle {
-		font-size: 1.25rem;
-		margin: 0 0 2rem;
-		opacity: 0.9;
+		font-size: 1.5rem;
+		margin: 0 0 3rem;
+		color: #4a7c59;
+		font-weight: 400;
 		max-width: 600px;
 		margin-left: auto;
 		margin-right: auto;
+		margin-bottom: 3rem;
 	}
 
 	.cta-button {
 		display: inline-block;
-		background: white;
-		color: #667eea;
-		padding: 1rem 2rem;
+		background: #2d5016;
+		color: white;
+		padding: 1.25rem 2.5rem;
 		border-radius: 50px;
 		text-decoration: none;
 		font-weight: 600;
-		transition: transform 0.2s, box-shadow 0.2s;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		font-size: 1.1rem;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 20px rgba(45, 80, 22, 0.3);
+		border: 2px solid #2d5016;
 	}
 
 	.cta-button:hover {
+		background: transparent;
+		color: #2d5016;
 		transform: translateY(-2px);
-		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+		box-shadow: 0 6px 25px rgba(45, 80, 22, 0.4);
 	}
 
-	.recent-posts h2 {
-		font-size: 2.5rem;
-		margin: 0 0 2rem;
-		color: #333;
-		text-align: center;
-	}
-
-	.posts-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	.recent-posts {
+		display: flex;
+		flex-direction: column;
 		gap: 2rem;
-		margin-bottom: 3rem;
+		max-width: 800px;
+		margin: 0 auto;
 	}
 
 	.post-card {
-		background: white;
-		border-radius: 1rem;
-		padding: 2rem;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-		transition: transform 0.2s, box-shadow 0.2s;
-		border: 1px solid #e5e7eb;
+		background: rgba(255, 255, 255, 0.9);
+		backdrop-filter: blur(10px);
+		border-radius: 1.5rem;
+		padding: 2.5rem;
+		box-shadow: 0 8px 32px rgba(45, 80, 22, 0.1);
+		transition: all 0.3s ease;
+		border: 1px solid rgba(255, 255, 255, 0.2);
 	}
 
 	.post-card:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+		transform: translateY(-8px);
+		box-shadow: 0 16px 48px rgba(45, 80, 22, 0.15);
+		background: rgba(255, 255, 255, 0.95);
 	}
 
-	.post-content h3 {
-		margin: 0 0 1rem;
-		font-size: 1.5rem;
+	.post-content h2 {
+		margin: 0 0 1.5rem;
+		font-size: 2rem;
 		line-height: 1.3;
+		font-weight: 700;
 	}
 
-	.post-content h3 a {
-		color: #333;
+	.post-content h2 a {
+		color: #2d5016;
 		text-decoration: none;
-		transition: color 0.2s;
+		transition: color 0.2s ease;
 	}
 
-	.post-content h3 a:hover {
-		color: #2563eb;
+	.post-content h2 a:hover {
+		color: #4a7c59;
 	}
 
 	.post-excerpt {
-		color: #666;
-		margin: 0 0 1.5rem;
-		line-height: 1.6;
+		color: #4a7c59;
+		margin: 0 0 2rem;
+		line-height: 1.7;
+		font-size: 1.1rem;
 	}
 
 	.post-meta {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		font-size: 0.875rem;
-		color: #888;
+		font-size: 0.95rem;
+		color: #6b8e23;
+		font-weight: 500;
 	}
 
-	.view-all {
+	.no-posts {
 		text-align: center;
-	}
-
-	.view-all-link {
-		color: #2563eb;
-		text-decoration: none;
-		font-weight: 600;
-		font-size: 1.125rem;
-		transition: color 0.2s;
-	}
-
-	.view-all-link:hover {
-		color: #1d4ed8;
+		padding: 4rem 2rem;
+		color: #4a7c59;
+		font-size: 1.2rem;
 	}
 
 	@media (max-width: 768px) {
 		.hero {
 			margin: -1rem -1rem 3rem;
-			padding: 3rem 1rem 4rem;
+			padding: 4rem 1rem 5rem;
 		}
 
 		.hero h1 {
@@ -168,16 +163,26 @@
 		}
 
 		.hero-subtitle {
-			font-size: 1.125rem;
+			font-size: 1.25rem;
 		}
 
-		.posts-grid {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
+		.cta-button {
+			padding: 1rem 2rem;
+			font-size: 1rem;
 		}
 
 		.post-card {
-			padding: 1.5rem;
+			padding: 2rem;
+		}
+
+		.post-content h2 {
+			font-size: 1.5rem;
+		}
+
+		.post-meta {
+			flex-direction: column;
+			gap: 0.5rem;
+			align-items: flex-start;
 		}
 	}
 </style>
