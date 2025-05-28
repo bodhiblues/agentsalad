@@ -11,7 +11,7 @@
 	// SEO values with fallbacks
 	$: seoTitle = seo?.title || `${title} - AgentSalad`;
 	$: seoDescription = seo?.description || excerpt;
-	$: ogImage = seo?.ogImage || '/logo.png';
+	$: ogImage = seo?.ogImage || '/logo-512.png';
 	$: ogType = seo?.ogType || 'article';
 	$: twitterCard = seo?.twitterCard || 'summary';
 	$: canonical = seo?.canonical;

@@ -12,7 +12,10 @@
 <div class="hero">
 	<h1>Welcome to AgentSalad</h1>
 	<div class="hero-logo">
-		<img src="/logo.png" alt="AgentSalad Logo" class="hero-logo-image" />
+		<picture>
+			<source srcset="/logo-256.webp" type="image/webp">
+			<img src="/logo-256.png" alt="AgentSalad Logo" class="hero-logo-image" />
+		</picture>
 	</div>
 	<p class="hero-subtitle">Crunchy insights into the agentic web</p>
 	<a href="/blog" class="cta-button">Explore Blog Posts</a>
@@ -71,6 +74,7 @@
 		object-fit: contain;
 		filter: drop-shadow(0 4px 12px rgba(45, 80, 22, 0.3));
 		transition: transform 0.3s ease;
+		display: block;
 	}
 
 	.hero-logo-image:hover {

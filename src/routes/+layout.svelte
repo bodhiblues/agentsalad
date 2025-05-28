@@ -13,7 +13,10 @@
 		<nav>
 			<div class="nav-container">
 				<a href="/" class="logo">
-					<img src="/logo.png" alt="AgentSalad Logo" class="logo-icon" />
+					<picture>
+						<source srcset="/logo-64.webp" type="image/webp">
+						<img src="/logo-64.png" alt="AgentSalad Logo" class="logo-icon" />
+					</picture>
 					<span class="logo-text">AGENTSALAD</span>
 				</a>
 				<ul class="nav-links">
@@ -93,6 +96,7 @@
 		height: 2.5rem;
 		object-fit: contain;
 		filter: drop-shadow(0 2px 4px rgba(45, 80, 22, 0.2));
+		display: block;
 	}
 
 	.logo-text {
