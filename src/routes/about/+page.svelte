@@ -1,30 +1,32 @@
 <svelte:head>
 	<title>About - AgentSalad</title>
-	<meta name="description" content="Learn more about AgentSalad and our mission to share modern web development insights." />
+	<meta name="description" content="Learn more about AgentSalad and our mission to share crunchy insights into the agentic web." />
 </svelte:head>
 
 <div class="about-container">
 	<div class="about-header">
 		<h1>About AgentSalad</h1>
-		<p class="subtitle">Sharing insights on modern web development</p>
+		<p class="subtitle">Crunchy insights into the agentic web</p>
 	</div>
 
 	<div class="about-content">
 		<section class="intro">
 			<h2>Welcome to Our Blog</h2>
 			<p>
-				AgentSalad is a modern web development blog focused on sharing practical insights, 
-				tutorials, and best practices for building amazing web applications. We cover the 
-				latest frameworks, tools, and techniques that help developers create better user experiences.
+				AgentSalad is a modern web development blog focused on the emerging agentic web - 
+				where AI agents, autonomous systems, and intelligent applications are reshaping 
+				how we build and interact with digital experiences. We share practical insights, 
+				tutorials, and best practices for developers navigating this exciting frontier.
 			</p>
 		</section>
 
 		<section class="mission">
 			<h2>Our Mission</h2>
 			<p>
-				We believe in making web development accessible and enjoyable for everyone. Our goal 
-				is to provide clear, actionable content that helps developers at all levels improve 
-				their skills and stay up-to-date with the rapidly evolving web development landscape.
+				We believe in making the agentic web accessible and understandable for everyone. Our goal 
+				is to provide clear, actionable content that helps developers at all levels understand 
+				and build with AI agents, autonomous systems, and the technologies that power the next 
+				generation of web applications.
 			</p>
 		</section>
 

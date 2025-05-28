@@ -5,13 +5,13 @@
 </script>
 
 <svelte:head>
-	<title>AgentSalad - Modern Web Development Blog</title>
-	<meta name="description" content="Discover the latest in web development, SvelteKit tutorials, and modern programming techniques." />
+	<title>AgentSalad - Crunchy Insights into the Agentic Web</title>
+	<meta name="description" content="Discover crunchy insights into the agentic web, AI agents, autonomous systems, and the future of intelligent web applications." />
 </svelte:head>
 
 <div class="hero">
 	<h1>Welcome to AgentSalad</h1>
-	<p class="hero-subtitle">Your source for modern web development insights and tutorials</p>
+	<p class="hero-subtitle">Crunchy Insights into the Agentic Web</p>
 	<a href="/blog" class="cta-button">Explore Blog Posts</a>
 </div>
 

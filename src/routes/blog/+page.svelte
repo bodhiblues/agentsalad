@@ -9,7 +9,7 @@
 
 <div class="blog-header">
 	<h1>Blog</h1>
-	<p>Insights, tutorials, and thoughts on modern web development</p>
+	<p>Crunchy insights into the agentic web and modern development</p>
 </div>
 
 <div class="posts-container">
