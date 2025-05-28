@@ -1,7 +1,7 @@
 // Site configuration
 export const siteConfig = {
 	name: 'AgentSalad',
-	url: 'https://agentsalad.com', // Update this to your actual domain
+	url: 'https://www.agentsalad.com', // Updated to use www version
 	description: 'Crunchy insights into the agentic web',
 	author: 'AgentSalad Team',
 	
