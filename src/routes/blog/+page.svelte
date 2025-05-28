@@ -1,49 +1,5 @@
 <script lang="ts">
-	let posts = [
-		{
-			slug: 'getting-started-with-sveltekit',
-			title: 'Getting Started with SvelteKit',
-			excerpt: 'Learn how to build modern web applications with SvelteKit, the full-stack framework for Svelte. This comprehensive guide covers everything from setup to deployment.',
-			date: '2024-01-15',
-			readTime: '5 min read',
-			tags: ['SvelteKit', 'Tutorial', 'Web Development']
-		},
-		{
-			slug: 'building-a-blog-with-sveltekit',
-			title: 'Building a Blog with SvelteKit',
-			excerpt: 'A step-by-step guide to creating a beautiful blog using SvelteKit and deploying it to Netlify. Perfect for developers looking to create their own blog.',
-			date: '2024-01-10',
-			readTime: '8 min read',
-			tags: ['SvelteKit', 'Blog', 'Netlify']
-		},
-		{
-			slug: 'modern-web-development',
-			title: 'Modern Web Development in 2024',
-			excerpt: 'Exploring the latest trends and technologies in web development for the modern era. From frameworks to deployment strategies.',
-			date: '2024-01-05',
-			readTime: '6 min read',
-			tags: ['Web Development', 'Trends', '2024']
-		},
-		{
-			slug: 'typescript-best-practices',
-			title: 'TypeScript Best Practices for 2024',
-			excerpt: 'Discover the best practices for writing clean, maintainable TypeScript code. Tips and tricks from experienced developers.',
-			date: '2024-01-01',
-			readTime: '7 min read',
-			tags: ['TypeScript', 'Best Practices', 'Code Quality']
-		},
-		{
-			slug: 'css-grid-vs-flexbox',
-			title: 'CSS Grid vs Flexbox: When to Use Which',
-			excerpt: 'A comprehensive comparison of CSS Grid and Flexbox, with practical examples and use cases for each layout method.',
-			date: '2023-12-28',
-			readTime: '4 min read',
-			tags: ['CSS', 'Layout', 'Grid', 'Flexbox']
-		}
-	];
-
-	// Sort posts by date (newest first)
-	posts = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+	import { posts } from '$lib/posts';
 </script>
 
 <svelte:head>

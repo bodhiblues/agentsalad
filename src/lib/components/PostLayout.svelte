@@ -1,24 +1,42 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { error } from '@sveltejs/kit';
-	import { getPost } from '$lib/posts';
-
-	$: slug = $page.params.slug;
-	$: post = getPost(slug);
-
-	$: if (!post) {
-		throw error(404, 'Post not found');
-	}
+	export let title: string;
+	export let date: string;
+	export let excerpt: string;
+	export let tags: string[];
+	export let readTime: string;
 </script>
 
 <svelte:head>
-	<title>{post?.title} - AgentSalad</title>
-	<meta name="description" content={post?.excerpt} />
+	<title>{title} - AgentSalad</title>
+	<meta name="description" content={excerpt} />
 </svelte:head>
 
-{#if post}
-	<svelte:component this={post.content} />
-{/if}
+<article class="post">
+	<header class="post-header">
+		<div class="post-tags">
+			{#each tags as tag}
+				<span class="tag">{tag}</span>
+			{/each}
+		</div>
+		<h1>{title}</h1>
+		<div class="post-meta">
+			<span class="post-date">{new Date(date).toLocaleDateString('en-US', { 
+				year: 'numeric', 
+				month: 'long', 
+				day: 'numeric' 
+			})}</span>
+			<span class="post-read-time">{readTime}</span>
+		</div>
+	</header>
+
+	<div class="post-content prose">
+		<slot />
+	</div>
+
+	<footer class="post-footer">
+		<a href="/blog" class="back-link">← Back to Blog</a>
+	</footer>
+</article>
 
 <style>
 	.post {
@@ -105,6 +123,7 @@
 		padding: 1.5rem;
 		overflow-x: auto;
 		margin: 1.5rem 0;
+		font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
 	}
 
 	:global(.post-content code) {
@@ -118,6 +137,14 @@
 	:global(.post-content pre code) {
 		background: none;
 		padding: 0;
+	}
+
+	:global(.post-content blockquote) {
+		border-left: 4px solid #2563eb;
+		padding-left: 1.5rem;
+		margin: 1.5rem 0;
+		font-style: italic;
+		color: #666;
 	}
 
 	.post-footer {

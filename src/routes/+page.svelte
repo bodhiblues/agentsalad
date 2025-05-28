@@ -1,29 +1,7 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { getRecentPosts } from '$lib/posts';
 
-	let recentPosts = [
-		{
-			slug: 'getting-started-with-sveltekit',
-			title: 'Getting Started with SvelteKit',
-			excerpt: 'Learn how to build modern web applications with SvelteKit, the full-stack framework for Svelte.',
-			date: '2024-01-15',
-			readTime: '5 min read'
-		},
-		{
-			slug: 'building-a-blog-with-sveltekit',
-			title: 'Building a Blog with SvelteKit',
-			excerpt: 'A step-by-step guide to creating a beautiful blog using SvelteKit and deploying it to Netlify.',
-			date: '2024-01-10',
-			readTime: '8 min read'
-		},
-		{
-			slug: 'modern-web-development',
-			title: 'Modern Web Development in 2024',
-			excerpt: 'Exploring the latest trends and technologies in web development for the modern era.',
-			date: '2024-01-05',
-			readTime: '6 min read'
-		}
-	];
+	const recentPosts = getRecentPosts(3);
 </script>
 
 <svelte:head>
