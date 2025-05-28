@@ -5,6 +5,7 @@
 <svelte:head>
 	<title>AgentSalad Blog</title>
 	<meta name="description" content="A modern blog built with SvelteKit" />
+	<link rel="icon" href="/logo.png" />
 </svelte:head>
 
 <div class="app">
@@ -12,7 +13,7 @@
 		<nav>
 			<div class="nav-container">
 				<a href="/" class="logo">
-					<span class="logo-icon">🥗</span>
+					<img src="/logo.png" alt="AgentSalad Logo" class="logo-icon" />
 					<span class="logo-text">AGENTSALAD</span>
 				</a>
 				<ul class="nav-links">
@@ -88,7 +89,9 @@
 	}
 
 	.logo-icon {
-		font-size: 2rem;
+		width: 2.5rem;
+		height: 2.5rem;
+		object-fit: contain;
 		filter: drop-shadow(0 2px 4px rgba(45, 80, 22, 0.2));
 	}
 
@@ -168,6 +171,11 @@
 
 		.nav-links {
 			gap: 1.5rem;
+		}
+
+		.logo-icon {
+			width: 2rem;
+			height: 2rem;
 		}
 
 		.logo-text {
