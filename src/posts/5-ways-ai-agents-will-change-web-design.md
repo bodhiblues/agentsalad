@@ -10,8 +10,6 @@ seo:
   description: 'The rise of AI agents—autonomous systems that can interact with digital environments on behalf of users—is reshaping the internet as we know it. As these agents become more prevalent in how people search, shop, and interact online, website design must evolve to accommodate this new kind of user.'
 ---
 
-# 5 Key Ways AI Agents Will Change Website Design
-
 The rise of AI agents—autonomous systems that can interact with digital environments on behalf of users—is reshaping the internet as we know it. As these agents become more prevalent in how people search, shop, and interact online, **website design must evolve** to accommodate this new kind of "user."
 
 Below, we explore five key ways AI agents are poised to disrupt and redefine website design in the coming years.
