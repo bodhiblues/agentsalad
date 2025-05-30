@@ -2,13 +2,13 @@
 title: '5 Key Ways AI Agents Will Change Website Design'
 date: '2025-05-30'
 excerpt: 'The rise of AI agents—autonomous systems that can interact with digital environments on behalf of users—is reshaping the internet as we know it. As these agents become more prevalent in how people search, shop, and interact online, **website design must evolve** to accommodate this new kind of "user."'
-seo:
-  title: '5 Key Ways AI Agents Will Change Website Design - AgentSalad'
-  description: 'The rise of AI agents—autonomous systems that can interact with digital environments on behalf of users—is reshaping the internet as we know it. As these agents become more prevalent in how people search, shop, and interact online, **website design must evolve** to accommodate this new kind of "user."'
-tags: ['MCP, AI Agents, Website Design']
+tags: ['MCP', 'AI Agents', 'Website Design']
 readTime: '5 min read'
 published: true
-
+seo:
+  title: '5 Key Ways AI Agents Will Change Website Design - AgentSalad'
+  description: 'The rise of AI agents—autonomous systems that can interact with digital environments on behalf of users—is reshaping the internet as we know it. As these agents become more prevalent in how people search, shop, and interact online, website design must evolve to accommodate this new kind of user.'
+---
 
 # 5 Key Ways AI Agents Will Change Website Design
 
@@ -54,7 +54,7 @@ Humans click buttons. Agents issue commands. This changes how CTAs work. Instead
 
 ## 4. Visual Aesthetics Will Take a Back Seat to Semantic Depth
 
-AI agents don’t “see” your design—but they interpret your content’s semantic meaning. Beautiful fonts and imagery will still matter to human visitors, but semantic layering will take priority in agent-first environments.
+AI agents don't "see" your design—but they interpret your content's semantic meaning. Beautiful fonts and imagery will still matter to human visitors, but semantic layering will take priority in agent-first environments.
 
 **What to do:**
 - Prioritise clarity of language and reduce fluff
@@ -77,7 +77,7 @@ Traditional personalisation relies on tracking pixels and cookies. In contrast, 
 
 ## Final Thoughts
 
-We’re moving toward a web where your site needs to serve both humans and machines—especially those machines acting on behalf of humans. AI agents are not a future consideration—they’re already here, quietly reshaping the digital experience.
+We're moving toward a web where your site needs to serve both humans and machines—especially those machines acting on behalf of humans. AI agents are not a future consideration—they're already here, quietly reshaping the digital experience.
 
 To stay relevant, designers and developers must embrace a dual approach: maintain human-centric beauty while building machine-centric clarity.
 
